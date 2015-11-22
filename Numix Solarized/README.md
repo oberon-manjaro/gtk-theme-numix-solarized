@@ -1,4 +1,8 @@
-Numix Solarized is a is a modern flat theme with a combination of light and dark elements. It supports Gnome, Unity, XFCE and Openbox. It is based on the Numix theme by Satyajit Sahoo (satyajit.happy@gmail.com).
+## Numix Solarized Dark
+
+Numix Solarized Dark is a modification of the [Numix Solarized theme](http://bitterologist.deviantart.com/art/Numix-Solarized-417575928) by [bitterologist](http://bitterologist.deviantart.com/) which is based on the Numix theme by Satyajit Sahoo (satyajit.happy@gmail.com).
+
+In Numix Solarized Dark, all light elements are replaced by dark ones.
 
 
 ### Manual installation

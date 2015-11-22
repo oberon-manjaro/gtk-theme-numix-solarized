@@ -1,9 +1,9 @@
 /* default color scheme */
-@define-color base_color #073642;
-@define-color bg_color #002b36;
-@define-color text_color #eee8d5;
-@define-color fg_color #dcdcdc;
-@define-color selected_bg_color #268bd2;
+@define-color bg_color #073642;
+@define-color fg_color #839496;
+@define-color base_color #002b36;
+@define-color text_color #839496;
+@define-color selected_bg_color #657b83;
 @define-color selected_fg_color #fdf6e3;
 @define-color tooltip_bg_color #002b36;
 @define-color tooltip_fg_color #eee8d5;
@@ -27,18 +27,18 @@
 @define-color dark_shadow #000;
 
 /* misc colors used by gtk+ */
-@define-color info_fg_color rgb (58, 135, 173);
+@define-color info_fg_color rgb (38, 110, 210);
 @define-color info_bg_color rgb (217, 237, 247);
-@define-color warning_fg_color rgb (192, 152, 83);
+@define-color warning_fg_color rgb (181, 137, 0);
 @define-color warning_bg_color rgb (252, 248, 227);
-@define-color question_fg_color rgb (214, 73, 55);
+@define-color question_fg_color rgb (203, 75, 22);
 @define-color question_bg_color rgb (252, 229, 213);
-@define-color error_fg_color rgb (185, 74, 72);
+@define-color error_fg_color rgb (220, 50, 47);
 @define-color error_bg_color rgb (242, 222, 222);
-@define-color link_color #fc6f5d;
-@define-color success_color #53a93f;
-@define-color warning_color #f57900;
-@define-color error_color #cc0000;
+@define-color link_color #d33682;
+@define-color success_color #859900;
+@define-color warning_color #cb4b16;
+@define-color error_color #dc322f;
 
 /* widget colors */
 @define-color titlebar_bg_color @dark_bg_color;

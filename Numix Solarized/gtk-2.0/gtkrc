@@ -1,6 +1,6 @@
-# Numix Solarized GTK Theme
+# Numix Solarized GTK Dark Theme
 
-gtk-color-scheme = "base_color:#002b36\nbg_color:#073642\ntooltip_bg_color:#002b36\nselected_bg_color:#859900\ntext_color:#eee8d5\nfg_color:#586e75\ntooltip_fg_color:#eee8d5\nselected_fg_color:#fdf6e3\nmenubar_bg_color:#002b36\nmenubar_fg_color:#dcdcdc\ntoolbar_bg_color:#eee8d5\ntoolbar_fg_color:#586e75\nmenu_bg_color:#002b36\nmenu_fg_color:#dcdcdc\npanel_bg_color:#002b36\npanel_fg_color:#dcdcdc\nlink_color:#fc6f5d"
+gtk-color-scheme = "base_color:#002b36\nbg_color:#073642\ntooltip_bg_color:#002b36\nselected_bg_color:#657b83\ntext_color:#839496\nfg_color:#eee8d5\ntooltip_fg_color:#eee8d5\nselected_fg_color:#fdf6e3\nmenubar_bg_color:#002b36\nmenubar_fg_color:#839496\ntoolbar_bg_color:#03222a\ntoolbar_fg_color:#586e75\nmenu_bg_color:#002b36\nmenu_fg_color:#dcdcdc\npanel_bg_color:#002b36\npanel_fg_color:#dcdcdc\nlink_color:#fc6f5d"
 
 # Default Style
 
@@ -469,7 +469,7 @@ class "PanelToplevel*" style "murrine-panel"
 widget_class "*PanelToplevel*" style "murrine-panel"
 widget_class "*notif*" style "murrine-panel"
 widget_class "*Notif*" style "murrine-panel"
-widget_class "*Tray*" style "murrine-panel" 
+widget_class "*Tray*" style "murrine-panel"
 widget_class "*tray*" style "murrine-panel"
 widget_class "*computertemp*" style "murrine-panel"
 widget_class "*Applet*Tomboy*" style "murrine-panel"

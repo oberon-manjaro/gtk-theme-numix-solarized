@@ -315,78 +315,24 @@ row:selected:focus {
 /*******************
  * check and radio *
  *******************/
-GtkCheckButton.text-button,
-GtkRadioButton.text-button {
-    padding: 1px;
-    outline-offset: 0;
-}
-
-.check {
-    color: shade(@theme_fg_color, 1.2);
-    background-image: none;
-
-    -gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
-}
-.check:hover {
-    color: shade(@theme_fg_color, 1.1);
-}
-
-.check:checked,
-.check:active {
-    -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
-
-    color: @theme_fg_color;
-}
-.check:checked:hover,
-.check:active:hover {
-    color: shade(@theme_fg_color, 1.1);
-}
-
-.check:checked:insensitive,
-.check:active:insensitive {
-    color: shade(@theme_fg_color, 1.1);
-}
-
-.check:insensitive {
-    color: shade(@theme_fg_color, 1.8);
-}
-
-.check:inconsistent {
-    -gtk-icon-source: -gtk-icontheme("checkbox-mixed-symbolic");
-}
-
-.radio {
-    color: shade(@theme_fg_color, 1.2);
-    background-image: none;
-
-    -gtk-icon-source: -gtk-icontheme("radio-symbolic");
-}
-.radio:hover {
-    color: shade(@theme_fg_color, 1.1);
-}
-
-.radio:checked,
-.radio:active {
-    -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
-
-    color: @theme_fg_color;
-}
-
-.radio:checked:hover,
-.radio:active:hover {
-    color: shade(@theme_fg_color, 1.1);
-}
-.radio:checked:insensitive,
-.radio:active:insensitive {
-    color: shade(@theme_fg_color, 1.1);
-}
-
+.check,
+.radio,
+.check:insensitive,
 .radio:insensitive {
-    color: shade(@theme_fg_color, 1.8);
+    border-style: none;
+    background-color: transparent;
 }
 
-.radio:inconsistent {
-    -gtk-icon-source: -gtk-icontheme("radio-mixed-symbolic");
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+    background-color: transparent;
+}
+
+GtkCheckButton {
+    outline-offset: 0;
+    padding: 3px;
 }
 
 /*****************
@@ -1181,12 +1127,12 @@ GtkPopover {
     margin: 10px;
     padding: 2px;
     border-radius: 2px;
-    border-color: shade(@menu_bg_color, 0.8);
+    border-color: shade(@theme_bg_color, 0.8);
     border-width: 1px;
     border-style: solid;
     background-clip: border-box;
-    background-color: @menu_bg_color;
-    color: @menu_fg_color;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
     box-shadow: 0 2px 3px alpha(black, 0.5);
 }
 
@@ -1214,13 +1160,13 @@ GtkPopover.osd > .toolbar .button {
 GtkPopover .separator {
     border: 0;
     background-color: transparent;
-    color: alpha(currentColor, 0.1);
+    color: alpha(currentColor, 0.5);
     font-size: 80%;
     font-weight: bold;
 }
 
 .menuitem.button {
-    color: @menu_fg_color;
+    color: @theme_fg_color;
 }
 
 .menuitem.button,
@@ -1232,7 +1178,7 @@ GtkPopover .separator {
     border-color: transparent;
     border-style: none;
     box-shadow: none;
-    color: @menu_fg_color;
+    color: @theme_fg_color;
 }
 
 .menuitem.button:active:hover,
@@ -1245,8 +1191,9 @@ GtkPopover .separator {
     color: @theme_selected_fg_color;
 }
 
-GtkModelButton.button {
-    color: @menu_fg_color;
+GtkModelButton.button
+{
+    color: @theme_fg_color;
 }
 
 GtkModelButton.button:active,
@@ -1288,7 +1235,6 @@ GtkModelButton.button:selected {
     text-shadow: none;
     border-width: 0;
     border-color: transparent;
-    border-radius: 2px;
 }
 
 /************
@@ -1304,7 +1250,7 @@ GtkModelButton.button:selected {
     background-image: none;
     background-clip: border-box;
 
-    -GtkNotebook-initial-gap: 0;
+    -GtkNotebook-initial-gap: 10;
     -GtkNotebook-arrow-spacing: 5;
     -GtkNotebook-tab-curvature: 0;
     -GtkNotebook-tab-overlap: 1;
@@ -2007,24 +1953,70 @@ GtkComboBox .separator {
 /***********
  * spinner *
  ***********/
-@keyframes spin {
-    to { -gtk-icon-transform: rotate(1turn); }
+@keyframes spinner {
+    00.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.70)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.40)), to(transparent)); }
+
+    10.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.80)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.90)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.60)), to(transparent)); }
+
+    20.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.60)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.90)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.80)), to(transparent)); }
+
+    30.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.40)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.70)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)); }
+
+    40.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.20)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.50)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.80)), to(transparent)); }
+
+    50.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.30)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.60)), to(transparent)); }
+
+    60.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.20)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.10)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.40)), to(transparent)); }
+
+    70.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.40)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.10)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.20)), to(transparent)); }
+
+    80.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.60)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.30)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent)); }
+
+    90.0% { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.80)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.50)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.20)), to(transparent)); }
+
+    100%  { background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.70)), to(transparent)),
+                              -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.40)), to(transparent)); }
 }
 
 .spinner {
-    background-image: none;
-    background-color: blue;
-    opacity: 0;
+    background-color: transparent;
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent));
 
-    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+    background-position: 0% 70%, 33% 70%, 70% 70%;
+    background-size: 30% 30%;
+    background-repeat: no-repeat;
 }
 
 .spinner:active {
-    opacity: 1;
-    animation: spin 1s linear infinite;
-}
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.70)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.40)), to(transparent));
 
-.spinner:active:insensitive { opacity: 0.5; }
+    animation: spinner 1s infinite linear;
+}
 
 .menu.spinner,
 .menu .spinner,

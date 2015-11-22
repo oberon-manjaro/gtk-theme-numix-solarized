@@ -2,8 +2,8 @@
 # Author: Martin Florén
 # License: GPL-3.0+
 
-active_text_color=#fdf6e3
-inactive_text_color=#eee8d5
+active_text_color=#002b36
+inactive_text_color=#073642
 button_offset=6
 button_spacing=6
 show_app_icon=true

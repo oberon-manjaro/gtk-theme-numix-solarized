@@ -12,8 +12,8 @@
 <constant name="C_titlebar" value="gtk:custom(wm_bg,#002b36)" />
 <constant name="C_border_focused" value="gtk:custom(wm_border_focused,#073642)" />
 <constant name="C_border_unfocused" value="gtk:custom(wm_border_unfocused,#002b36)" />
-<constant name="C_title_focused" value="gtk:custom(wm_title_focused,#fdf6e3)" />
-<constant name="C_title_unfocused" value="gtk:custom(wm_title_unfocused,#eee8d5)" />
+<constant name="C_title_focused" value="gtk:custom(wm_title_focused,#002b36)" />
+<constant name="C_title_unfocused" value="gtk:custom(wm_title_unfocused,#073642)" />
 
 <!-- ::: GEOMETRY ::: -->
 <frame_geometry name="normal" title_scale="medium" rounded_top_left="1" rounded_top_right="1">
@@ -180,22 +180,22 @@
 
 <draw_ops name="border_right_unfocused">
 	<line
-		x1="width-1" y1="0" 
-		x2="width-1" y2="height" 
+		x1="width-1" y1="0"
+		x2="width-1" y2="height"
 		color="C_border_unfocused" />
 </draw_ops>
 
 <draw_ops name="border_left_focused">
 	<line
-		x1="0" y1="0" 
-		x2="0" y2="height" 
+		x1="0" y1="0"
+		x2="0" y2="height"
 		color="C_border_focused" />
 </draw_ops>
 
 <draw_ops name="border_left_unfocused">
 	<line
-		x1="0" y1="0" 
-		x2="0" y2="height" 
+		x1="0" y1="0"
+		x2="0" y2="height"
 		color="C_border_unfocused" />
 </draw_ops>
 
